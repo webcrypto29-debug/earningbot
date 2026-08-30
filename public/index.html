@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Earning Mini App</title>
+  <!-- Telegram WebApp SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header Section -->
+    <header class="user-card">
+      <div class="user-info">
+        <span id="user-name">Loading...</span>
+        <span class="user-id" id="user-id">ID: ----</span>
+      </div>
+      <div class="balances">
+        <div class="balance-box">
+          <span class="label">Credits</span>
+          <span class="val" id="credits-val">0</span>
+        </div>
+        <div class="balance-box">
+          <span class="label">USDT</span>
+          <span class="val" id="usdt-val">$0.00</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 1. HOME TAB -->
+    <section id="tab-home" class="tab-content active">
+      <div class="banner">
+        <h2>🚀 Welcome to Earning Hub</h2>
+        <p>Complete tasks, watch ads, and spin the wheel to earn real rewards!</p>
+      </div>
+
+      <div class="quick-stats">
+        <div class="stat-card">
+          <h3>Daily Bonus</h3>
+          <button id="daily-claim-btn" class="btn btn-primary">Claim 50 Credits</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. EARN TAB (Ads / Direct Links) -->
+    <section id="tab-earn" class="tab-content">
+      <h2>💸 Earn Credits</h2>
+      <p class="sub-text">Click watch, wait 15 seconds on link, and earn credits!</p>
+
+      <div class="earn-list">
+        <div class="task-card">
+          <div class="task-details">
+            <h4>Watch Short Ad #1</h4>
+            <p>Reward: +20 Credits</p>
+          </div>
+          <button class="btn btn-action watch-ad-btn" data-url="https://example.com/ad1" data-reward="20">Watch (15s)</button>
+        </div>
+
+        <div class="task-card">
+          <div class="task-details">
+            <h4>Watch Short Ad #2</h4>
+            <p>Reward: +20 Credits</p>
+          </div>
+          <button class="btn btn-action watch-ad-btn" data-url="https://example.com/ad2" data-reward="20">Watch (15s)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TASKS TAB (Social & Codes) -->
+    <section id="tab-tasks" class="tab-content">
+      <h2>📋 Social Tasks</h2>
+      
+      <!-- Promo Code Section -->
+      <div class="code-box">
+        <input type="text" id="promo-code-input" placeholder="Enter Secret Code...">
+        <button id="submit-code-btn" class="btn btn-primary">Redeem</button>
+      </div>
+
+      <div class="task-list">
+        <div class="task-card">
+          <div class="task-details">
+            <h4>Subscribe Telegram Channel</h4>
+            <p>Reward: +100 Credits</p>
+          </div>
+          <button class="btn btn-secondary task-sub-btn" data-type="telegram" data-reward="100">Join</button>
+        </div>
+
+        <div class="task-card">
+          <div class="task-details">
+            <h4>Subscribe YouTube Channel</h4>
+            <p>Reward: +150 Credits</p>
+          </div>
+          <button class="btn btn-secondary task-sub-btn" data-type="youtube" data-reward="150">Subscribe</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SPIN WHEEL TAB -->
+    <section id="tab-spin" class="tab-content">
+      <h2>🎡 Spin & Win</h2>
+      <p class="sub-text">Cost: 50 Credits per spin</p>
+
+      <div class="wheel-container">
+        <div class="wheel" id="wheel">
+          <div class="segment" style="--i:1;"><span>$0.01</span></div>
+          <div class="segment" style="--i:2;"><span>10 Cr</span></div>
+          <div class="segment" style="--i:3;"><span>$0.05</span></div>
+          <div class="segment" style="--i:4;"><span>0 Cr</span></div>
+          <div class="segment" style="--i:5;"><span>$0.10</span></div>
+          <div class="segment" style="--i:6;"><span>50 Cr</span></div>
+        </div>
+        <div class="pointer">▼</div>
+      </div>
+
+      <button id="spin-btn" class="btn btn-success">Spin Now!</button>
+    </section>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-tab="tab-home">
+        <span>🏠</span>
+        <small>Home</small>
+      </button>
+      <button class="nav-btn" data-tab="tab-earn">
+        <span>💸</span>
+        <small>Earn</small>
+      </button>
+      <button class="nav-btn" data-tab="tab-tasks">
+        <span>📋</span>
+        <small>Tasks</small>
+      </button>
+      <button class="nav-btn" data-tab="tab-spin">
+        <span>🎡</span>
+        <small>Spin</small>
+      </button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
 

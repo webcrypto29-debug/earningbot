@@ -1,1 +1,17 @@
 
+{
+  "name": "telegram-earning-miniapp",
+  "version": "1.0.0",
+  "description": "Telegram Mini App with Earn, Tasks, Spin Wheel, and Admin Panel",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.1",
+    "telegraf": "^4.16.3"
+  }
+}

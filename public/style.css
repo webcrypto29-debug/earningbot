@@ -1,1 +1,233 @@
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --accent-color: #38bdf8;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --success: #22c55e;
+  --warning: #eab308;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  user-select: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  padding-bottom: 70px;
+}
+
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* User Card & Balance Header */
+.user-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.user-id {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.balances {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.balance-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.balance-box .label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.balance-box .val {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* Tabs Toggle */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+h2 {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.sub-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* Home Banner */
+.banner {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.banner h2 {
+  margin-bottom: 6px;
+}
+
+/* Cards & Lists */
+.task-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-details h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.task-details p {
+  font-size: 12px;
+  color: var(--success);
+}
+
+/* Code Input Box */
+.code-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.code-box input {
+  flex: 1;
+  background: var(--card-bg);
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 10px;
+  color: #fff;
+  outline: none;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary { background: var(--accent-color); color: #000; }
+.btn-action { background: var(--warning); color: #000; }
+.btn-secondary { background: #334155; color: #fff; }
+.btn-success { background: var(--success); color: #fff; width: 100%; padding: 14px; font-size: 16px; }
+
+/* Spin Wheel */
+.wheel-container {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 30px auto;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid var(--accent-color);
+  position: relative;
+  overflow: hidden;
+  transition: transform 4s cubic-bezier(0.15, 0.99, 0.18, 1);
+  background: conic-gradient(
+    #3b82f6 0deg 60deg,
+    #10b981 60deg 120deg,
+    #f59e0b 120deg 180deg,
+    #ef4444 180deg 240deg,
+    #8b5cf6 240deg 300deg,
+    #ec4899 300deg 360deg
+  );
+}
+
+.pointer {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: #fff;
+  z-index: 10;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #020617;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #1e293b;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.nav-btn span {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.nav-btn.active {
+  color: var(--accent-color);
+}
 
